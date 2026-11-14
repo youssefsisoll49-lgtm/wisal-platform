@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="وِصال — منصة تعارف جاد بغرض الزواج، باحترام وخصوصية.">
+<meta name="theme-color" content="#123d35">
+<title>وِصال | WISAL — زواج بنية صادقة</title>
+<style>
+:root{--green:#123d35;--green2:#1c594b;--gold:#c9a96a;--cream:#fbf8f1;--ink:#21332e;--muted:#718078;--line:#e9e4d8;--white:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font-family:Tahoma,Arial,sans-serif;line-height:1.7}
+a{color:inherit;text-decoration:none}button,input,select{font:inherit}.wrap{width:min(1160px,92%);margin:auto}
+header{position:sticky;top:0;z-index:20;background:#fbf8f1ed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:10px;color:var(--green);font-weight:800;font-size:25px;letter-spacing:.4px}
+.brand-mark{width:39px;height:39px;border:1.5px solid var(--gold);border-radius:14px 14px 14px 3px;display:grid;place-items:center;color:var(--gold);font-size:20px}
+.links{display:flex;gap:27px;color:#53645d;font-size:14px}.links a:hover{color:var(--green)}
+.nav-actions{display:flex;align-items:center;gap:10px}.lang{border:1px solid var(--line);background:white;border-radius:10px;padding:8px 11px;color:var(--green)}
+.btn{border:0;border-radius:12px;padding:12px 20px;cursor:pointer;font-weight:700;transition:.2s;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.btn:hover{transform:translateY(-2px)}.primary{background:var(--green);color:white;box-shadow:0 8px 20px #123d3520}.primary:hover{background:var(--green2)}.outline{background:transparent;border:1px solid #cfc8b8;color:var(--green)}.gold{background:var(--gold);color:#172f28}
+.hero{padding:74px 0 64px;background:radial-gradient(circle at 13% 22%,#e9dfc8 0,transparent 28%),linear-gradient(135deg,#fbf8f1,#f2eee3)}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:54px}
+.eyebrow{color:#99783e;font-size:13px;font-weight:800;letter-spacing:1px;display:flex;align-items:center;gap:9px}.eyebrow:before{content:"";width:27px;height:1px;background:var(--gold)}
+h1{font-size:clamp(38px,5vw,62px);line-height:1.25;color:var(--green);margin:17px 0}.hero p{font-size:18px;color:#63736b;max-width:560px;margin:0 0 28px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}.trust{display:flex;gap:20px;flex-wrap:wrap;margin-top:30px;color:#65756d;font-size:13px}.trust span{display:flex;align-items:center;gap:7px}.check{color:#9a7a43;font-weight:bold}
+.visual{position:relative;min-height:430px;display:grid;place-items:center}
+.arch{width:min(390px,90%);height:410px;border-radius:190px 190px 28px 28px;background:linear-gradient(145deg,#17483e,#0e302b);position:relative;overflow:hidden;box-shadow:0 24px 55px #123d3530;display:flex;align-items:center;justify-content:center}
+.arch:before,.arch:after{content:"";position:absolute;border:1px solid #c9a96a66;border-radius:50%;width:300px;height:300px;transform:rotate(35deg)}.arch:after{width:230px;height:360px;transform:rotate(-35deg)}
+.arch-content{position:relative;z-index:1;text-align:center;color:#f8f1df;padding:25px}.arch-symbol{font-size:82px;color:var(--gold);line-height:1}.arch-content strong{display:block;font-size:31px;letter-spacing:3px;margin-top:16px}.arch-content small{color:#e6d4aa}
+.float-card{position:absolute;background:white;border:1px solid var(--line);border-radius:15px;padding:13px 16px;box-shadow:0 12px 35px #172e2518;font-size:13px}.float-card.one{top:55px;right:-5px}.float-card.two{bottom:42px;left:-3px}.float-card b{display:block;color:var(--green);font-size:15px}
+section{padding:72px 0}.section-head{text-align:center;max-width:650px;margin:0 auto 38px}.section-head h2{color:var(--green);font-size:32px;margin:0 0 8px}.section-head p{color:var(--muted);margin:0}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.feature{background:white;border:1px solid var(--line);border-radius:18px;padding:25px}.feature-icon{width:48px;height:48px;border-radius:15px;background:#f3eddf;color:#96743c;display:grid;place-items:center;font-size:22px}.feature h3{color:var(--green);margin:14px 0 6px;font-size:18px}.feature p{color:var(--muted);font-size:14px;margin:0}
+.steps{background:#f1ede3}.step-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}.step{text-align:center;padding:20px}.num{width:44px;height:44px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;margin:0 auto 12px;font-weight:bold}.step h3{color:var(--green);margin:8px}.step p{color:var(--muted);font-size:14px;margin:0}
+.membership{display:grid;grid-template-columns:1fr;gap:20px;max-width:520px;margin:auto}.plan{background:white;border:1px solid var(--line);border-radius:20px;padding:28px}.plan.featured{background:var(--green);color:white;border-color:var(--green)}.plan h3{font-size:22px;margin:0 0 5px}.plan .sub{color:var(--muted);font-size:13px}.featured .sub{color:#d2ddd7}.price{font-size:28px;font-weight:800;margin:18px 0}.plan ul{padding:0 20px 0 0;margin:15px 0 22px}.plan li{margin:8px 0;font-size:14px}.featured li{color:#e4eee8}
+.cta{background:linear-gradient(120deg,#123d35,#1c594b);color:white;text-align:center;padding:58px 20px;border-radius:25px}.cta h2{font-size:30px;margin:0 0 8px}.cta p{color:#d2ddd7;margin:0 0 20px}
+footer{padding:35px 0;border-top:1px solid var(--line);color:#718078;font-size:13px}.footer-row{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.footer-brand{color:var(--green);font-size:20px;font-weight:800}
+.modal{display:none;position:fixed;inset:0;background:#10251f99;z-index:50;padding:18px;overflow:auto}.modal.show{display:grid;place-items:center}.dialog{background:var(--cream);width:min(520px,100%);border-radius:22px;padding:27px;position:relative;box-shadow:0 25px 80px #0003}.dialog.member-dialog{width:min(1040px,100%);max-height:92vh;overflow:auto}.dash-tabs{display:flex;gap:8px;flex-wrap:wrap;margin:16px 0}.dash-tabs button{border:1px solid var(--line);background:#fff;color:var(--green);border-radius:10px;padding:9px 13px;cursor:pointer}.dash-tabs button.active{background:var(--green);color:#fff}.dash-panel{background:#fff;border:1px solid var(--line);border-radius:16px;padding:18px;margin-top:12px}.dash-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.member-card{border:1px solid var(--line);border-radius:14px;padding:15px;background:#fff}.member-card h4{color:var(--green);margin:0 0 5px}.member-card p{margin:4px 0;color:var(--muted)}.member-actions{display:flex;gap:7px;flex-wrap:wrap;margin-top:10px}.member-actions button{padding:8px 11px;font-size:12px}.dash-status{padding:10px;border-radius:10px;background:#f3eddf;color:#796037;margin:10px 0;font-size:13px}.chat-box{max-height:340px;overflow:auto;border:1px solid var(--line);border-radius:12px;padding:12px;margin:12px 0}.chat-message{padding:9px 12px;border-radius:12px;background:#f4f0e7;margin:7px 0;max-width:85%}.chat-message.mine{background:#e1eee7;margin-right:auto}.chat-message.theirs{background:#e8f1fb;margin-left:auto;border:1px solid #d4e4f7}.read-mark{color:#2583d8;font-weight:800;font-size:12px;margin-inline-start:5px}.chat-tools{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin:8px 0}.chat-read{color:#1687d9;font-weight:800}.chat-head{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}.chat-free-note{background:#eef5f1;border:1px solid #d7e8df;color:#285c49;border-radius:10px;padding:9px 12px;font-size:12px;margin:8px 0}.chat-message.theirs{background:#e8f1fb;margin-left:auto;border:1px solid #d4e4f7}.read-mark{color:#2583d8;font-weight:800;font-size:12px;margin-inline-start:5px}.chat-tools{display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;margin:8px 0}.chat-compose{display:flex;gap:8px}.chat-compose input{flex:1;min-width:0;border:1px solid var(--line);border-radius:10px;padding:10px}.small-muted{font-size:12px;color:var(--muted)}@media(max-width:650px){.dialog.member-dialog{padding:17px}.dash-grid{grid-template-columns:1fr}.chat-compose{flex-direction:column}}.close{position:absolute;left:17px;top:13px;border:0;background:transparent;font-size:25px;cursor:pointer;color:var(--muted)}.dialog h2{color:var(--green);margin:0 0 5px}.dialog p{color:var(--muted);font-size:13px;margin:0 0 20px}.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:5px}.field.full{grid-column:1/-1}.field label{font-size:13px;color:#53645d;font-weight:700}.field input,.field select{border:1px solid #ded8ca;border-radius:10px;padding:11px;background:white;min-width:0}.password-wrap{display:flex;align-items:center;gap:8px}.password-wrap input{flex:1;min-width:0}.toggle-password{border:1px solid #ded8ca;background:#fff;color:var(--green);border-radius:10px;padding:9px 11px;cursor:pointer;white-space:nowrap;font-size:13px}.note{font-size:12px;color:#927747;background:#f3eddf;padding:10px 12px;border-radius:10px;margin:14px 0}
+.profile-stage{margin-top:18px}.profile-stage h3{color:var(--green);margin:0 0 6px}.profile-stage p{margin:0 0 16px}.profile-stage .field{margin-bottom:12px}.profile-stage .status{font-size:13px;color:var(--muted);margin:12px 0}.profile-stage .success{color:#176b48}.profile-stage .error{color:#a83232}
+@media(max-width:800px){.links{display:none}.hero{padding:48px 0}.hero-grid{grid-template-columns:1fr;gap:25px}.visual{min-height:370px}.arch{height:350px}.features,.step-grid{grid-template-columns:1fr}.membership{grid-template-columns:1fr}.float-card.one{right:0}.float-card.two{left:0}section{padding:55px 0}}
+@media(max-width:440px){.nav{height:66px}.brand{font-size:21px}.nav-actions .outline{display:none}h1{font-size:39px}.hero p{font-size:16px}.form-grid{grid-template-columns:1fr}.field.full{grid-column:auto}.arch{height:320px}.visual{min-height:340px}}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+<header>
+ <div class="wrap nav">
+  <a class="brand" href="#"><span class="brand-mark">و</span><span>WISAL <small style="font-size:13px;color:#a2834d">وِصال</small></span></a>
+  <nav class="links"><a href="#about">عن وِصال</a><a href="#how">كيف يعمل</a><a href="#safety">الأمان والخصوصية</a><a href="#plans">العضوية</a></nav>
+  <div class="nav-actions"><span class="lang" aria-label="اللغة الحالية">العربية</span><button class="btn outline" onclick="openModal('login')">دخول</button><button class="btn primary" onclick="openModal('register')">إنشاء حساب</button></div>
+ </div>
+</header>
+<main>
+<section class="hero">
+ <div class="wrap hero-grid">
+  <div>
+   <div class="eyebrow">بداية جادة نحو حياة مشتركة</div>
+   <h1>الزواج يبدأ<br>بنية صادقة.</h1>
+   <p>وِصال مساحة محترمة للتعارف الجاد بغرض الزواج، تجمع المسلمين والمسلمات من مختلف أنحاء العالم، مع الاهتمام بالخصوصية والوضوح وحسن الاختيار.</p>
+   <div class="hero-actions"><button class="btn primary" onclick="openModal('register')">ابدأ مجاناً <span>←</span></button><a class="btn outline" href="#how">اكتشف كيف يعمل</a></div>
+   <div class="trust"><span><i class="check">✓</i> التسجيل الأساسي مجاني</span><span><i class="check">✓</i> خصوصية تحترمك</span><span><i class="check">✓</i> نية واضحة للزواج</span></div>
+  </div>
+  <div class="visual">
+   <div class="arch"><div class="arch-content"><div class="arch-symbol">۞</div><strong>WISAL</strong><small>وِصال — ميثاق المودة والاحترام</small></div></div>
+   <div class="float-card one">✦ <b>اختيار واعٍ</b><span>تعارف جاد ومحترم</span></div>
+   <div class="float-card two">♡ <b>خصوصيتك أولاً</b><span>تحكم في معلوماتك</span></div>
+  </div>
+ </div>
+</section>
+<section id="about">
+ <div class="wrap"><div class="section-head"><h2>مساحة للجدية والاحترام</h2><p>صممنا وِصال ليكون واضح الهدف، سهل الاستخدام، ومتاحاً للمسلمين في مختلف البلدان.</p></div>
+ <div class="features">
+  <article class="feature"><div class="feature-icon">◎</div><h3>نية واضحة</h3><p>منصة مخصصة للباحثين والباحثات عن الزواج، وليست للمواعدة العابرة.</p></article>
+  <article class="feature" id="safety"><div class="feature-icon">♧</div><h3>خصوصية وأمان</h3><p>إعدادات للتحكم في ظهور المعلومات، مع أدوات للتبليغ والحظر ومراجعة الحسابات.</p></article>
+  <article class="feature"><div class="feature-icon">⌖</div><h3>تواصل من بلدان مختلفة</h3><p>إمكانية تحديد البلد والتفضيلات لتسهيل العثور على شخص مناسب.</p></article>
+ </div></div>
+</section>
+<section class="steps" id="how"><div class="wrap"><div class="section-head"><h2>كيف تبدأ رحلتك؟</h2><p>خطوات بسيطة، مع احترام خصوصية كل عضو.</p></div>
+ <div class="step-grid"><div class="step"><div class="num">١</div><h3>أنشئ حسابك</h3><p>أدخل معلومات أساسية وصادقة عن نفسك.</p></div><div class="step"><div class="num">٢</div><h3>حدّد ما تبحث عنه</h3><p>اختر البلد والتفضيلات والصفات المهمة بالنسبة لك.</p></div><div class="step"><div class="num">٣</div><h3>ابدأ بتواصل محترم</h3><p>تعرّف بوضوح، وسجّل تفضيلك بشأن إشراك الأسرة أو ولي الأمر عند الحاجة.</p></div></div>
+</div></section>
+<section id="plans"><div class="wrap"><div class="section-head"><h2>الأساسيات مجانية دائماً</h2><p>يمكنك إنشاء حساب واستعمال الأساسيات دون دفع.</p></div>
+ <div class="membership">
+  <div class="plan featured"><h3>العضوية المجانية</h3><div class="sub">ابدأ وتعرّف على المنصة</div><div class="price">مجاناً</div><ul><li>إنشاء ملف شخصي</li><li>تحديد البلد والتفضيلات</li><li>استكشاف الملفات المتاحة</li><li>أدوات الخصوصية الأساسية</li></ul><button class="btn gold" style="width:100%" onclick="openModal('register')">إنشاء حساب مجاني</button></div>
+
+ </div>
+</div></section>
+<section><div class="wrap"><div class="cta"><h2>ابدأ بخطوة صادقة</h2><p>وِصال — لأن الاختيار الجاد يستحق مساحة تحترمك.</p><button class="btn gold" onclick="openModal('register')">انضم مجاناً</button></div></div></section>
+</main>
+
+<section id="charter" class="steps"><div class="wrap"><div class="section-head"><h2>ميثاق وِصال</h2><p>الجدية والصدق والاحترام أساس كل تواصل.</p></div><div class="features">
+<article class="feature"><h3>نية الزواج</h3><p>يُستخدم وِصال للتعارف المسؤول بقصد الزواج، ويُمنع التضليل أو استغلال الأعضاء.</p></article>
+<article class="feature"><h3>الصدق والاحترام</h3><p>يلتزم الأعضاء بتقديم معلومات صادقة، واحترام الحدود، ورفض الإكراه والابتزاز والتحرش.</p></article>
+<article class="feature"><h3>الأسرة والولي</h3><p>نشجع إشراك الأسرة أو الولي عند ملاءمة ذلك، مع احترام خصوصية العضو وقراره وعدم فرض التواصل.</p></article>
+</div></div></section>
+<section id="terms"><div class="wrap"><div class="section-head"><h2>الشروط والخصوصية — ملخص تجريبي</h2><p>هذه صياغة أولية للتوضيح وليست بديلاً عن مراجعة قانونية في البلدان المستهدفة.</p></div><div class="dash-panel"><h3>شروط الاستخدام</h3><ul><li>المنصة للبالغين من 18 سنة فما فوق ولغرض الزواج الجاد.</li><li>يُمنع إنشاء حساب مزيف أو نشر معلومات مضللة أو مضايقة الآخرين أو طلب المال والابتزاز.</li><li>يحق للمنصة تقييد الحسابات المخالفة بعد مراجعة عادلة، مع توفير وسيلة للتبليغ.</li><li>لا تضمن المنصة حصول زواج أو صحة كل معلومة يقدمها عضو آخر؛ تحقّق بنفسك واستعن بأسرتك.</li></ul><h3>الخصوصية</h3><ul><li>لا يظهر البريد الإلكتروني أو تاريخ الميلاد الكامل في نتائج البحث.</li><li>ظهور الملف في البحث اختياري ويمكن إيقافه.</li><li>أرقام الهاتف تحفظ في مساحة خاصة، ولا تُكشف إلا بطلب محدد وموافقة صريحة من صاحب الرقم، ويمكنه إلغاء الموافقة.</li><li>لا ترسل كلمات مرور أو معلومات مالية أو وثائق حساسة عبر المحادثات.</li><li>يجب تحديد مدة الاحتفاظ بالبيانات وآلية حذف الحساب وحقوق الوصول والتصحيح وفق قوانين كل بلد قبل الإطلاق العام.</li></ul><p class="small-muted">آخر تحديث: 11 نوفمبر 2026 — نسخة تجريبية قيد المراجعة.</p></div></div></section>
+
+<footer><div class="wrap footer-row"><div><div class="footer-brand">WISAL | وِصال</div><div>منصة للتعارف الجاد بغرض الزواج.</div></div><div><a href="privacy.html">سياسة الخصوصية</a> · <a href="delete-account.html">حذف الحساب</a> · <a href="#charter">ميثاق وِصال</a> · <a href="#safety">السلامة</a><br><small>نسخة اختبار أولية — لا تُدخل معلومات حساسة قبل اكتمال المراجعة.</small></div><div>© 2026 WISAL</div></div></footer>
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" onclick="if(event.target===this)closeModal()">
+ <div class="dialog"><button class="close" onclick="closeModal()" aria-label="إغلاق">×</button>
+  <h2 id="modalTitle">إنشاء حساب مجاني</h2>
+  <p id="modalDesc">أنشئ حسابك بالبريد الإلكتروني وكلمة السر. لن نطلب منك الآن معلومات الملف الشخصي.</p>
+  <form id="authForm">
+   <div class="form-grid">
+    <div class="field full"><label for="authEmail">البريد الإلكتروني</label><input id="authEmail" type="email" autocomplete="email" placeholder="name@example.com" required></div>
+    <div class="field full"><label for="authPassword">كلمة السر</label><div class="password-wrap"><input id="authPassword" type="password" minlength="8" autocomplete="new-password" placeholder="8 أحرف على الأقل" required><button class="toggle-password" type="button" data-password-target="authPassword" aria-label="إظهار كلمة السر" aria-pressed="false">👁️ إظهار</button></div></div>
+    <div class="field full" id="confirmField"><label for="authConfirm">تأكيد كلمة السر</label><div class="password-wrap"><input id="authConfirm" type="password" minlength="8" autocomplete="new-password" placeholder="أعد كتابة كلمة السر" required><button class="toggle-password" type="button" data-password-target="authConfirm" aria-label="إظهار تأكيد كلمة السر" aria-pressed="false">👁️ إظهار</button></div></div>
+   </div>
+   <div id="registerConsent" class="field full" style="margin-top:12px"><label style="display:flex;gap:9px;align-items:flex-start;font-weight:400"><input id="acceptTerms" type="checkbox" required style="margin-top:5px"> أوافق على <a href="#terms" target="_blank" style="color:#96743c;text-decoration:underline">شروط الاستخدام وسياسة الخصوصية</a>، وأؤكد أن عمري 18 سنة أو أكثر.</label></div>
+   <div class="note" id="authMessage" role="status" aria-live="polite">استعمل بريداً إلكترونياً يمكنك فتحه، فقد تحتاج إلى تأكيده.</div>
+   <button class="btn outline" id="forgotPassword" type="button" style="display:none;width:100%;margin-bottom:10px">نسيت كلمة السر؟ إرسال رابط الاستعادة</button>
+   <button class="btn primary" id="authSubmit" style="width:100%" type="submit">إنشاء حساب</button>
+  </form>
+  <div id="profileStage" style="display:none"></div>
+  <div id="recoveryStage" style="display:none"></div>
+  <p id="authSwitchRow" style="margin-top:16px;text-align:center"><span id="switchText">عندك حساب من قبل؟</span> <button type="button" class="btn outline" id="switchMode" style="padding:6px 12px">تسجيل الدخول</button></p>
+ </div>
+</div>
+<script>
+// المفتاح العمومي فقط؛ لا تضع هنا أبداً Secret أو Service Role Key.
+const SUPABASE_URL = 'https://yatcvycflojzwcbjyobe.supabase.co';
+const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_hXWRVL0wYfBABpW67S1zZw_vFzK_hsX';
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+let authMode = 'register';
+const modal = document.getElementById('modal');
+const form = document.getElementById('authForm');
+const message = document.getElementById('authMessage');
+const confirmField = document.getElementById('confirmField');
+const password = document.getElementById('authPassword');
+const confirmPassword = document.getElementById('authConfirm');
+function openModal(mode){
+ authMode = mode === 'login' ? 'login' : 'register';
+ modal.classList.add('show');
+ updateAuthForm();
+}
+function closeModal(){modal.classList.remove('show'); form.reset(); document.querySelector('.dialog').classList.remove('member-dialog');}
+function updateAuthForm(){
+ document.querySelector('.dialog').classList.remove('member-dialog');
+ document.getElementById('profileStage').style.display='none';
+ document.getElementById('recoveryStage').style.display='none';
+ document.getElementById('recoveryStage').innerHTML='';
+ password.type='password'; confirmPassword.type='password';
+ document.querySelectorAll('.toggle-password').forEach(button=>{button.textContent='👁️ إظهار';button.setAttribute('aria-pressed','false');});
+ document.getElementById('authSwitchRow').style.display='block';
+ form.style.display='block';
+ document.getElementById('switchText').style.display='inline';
+ document.getElementById('switchMode').style.display='inline-flex';
+ const registering = authMode === 'register';
+ document.getElementById('modalTitle').textContent = registering ? 'إنشاء حساب مجاني' : 'تسجيل الدخول';
+ document.getElementById('modalDesc').textContent = registering ? 'أنشئ حسابك بالبريد الإلكتروني وكلمة السر.' : 'أدخل البريد الإلكتروني وكلمة السر المرتبطين بحسابك.';
+ confirmField.style.display = registering ? 'flex' : 'none';
+ document.getElementById('registerConsent').style.display = registering ? 'flex' : 'none';
+ document.getElementById('acceptTerms').required = registering;
+ confirmPassword.required = registering;
+ password.autocomplete = registering ? 'new-password' : 'current-password';
+ document.getElementById('authSubmit').textContent = registering ? 'إنشاء حساب' : 'دخول';
+ document.getElementById('forgotPassword').style.display = registering ? 'none' : 'block';
+ document.getElementById('switchText').textContent = registering ? 'عندك حساب من قبل؟' : 'ما عندكش حساب؟';
+ document.getElementById('switchMode').textContent = registering ? 'تسجيل الدخول' : 'إنشاء حساب';
+ message.textContent = registering ? 'استعمل بريداً إلكترونياً يمكنك فتحه، فقد تحتاج إلى تأكيده.' : 'أدخل بيانات الدخول الخاصة بك.';
+}
+document.getElementById('switchMode').addEventListener('click',()=>{authMode = authMode === 'register' ? 'login' : 'register'; form.reset(); updateAuthForm();});
+supabaseClient.auth.onAuthStateChange((event, session)=>{
+ if(event==='PASSWORD_RECOVERY' && session?.user) showPasswordRecovery(session.user);
+});
+supabaseClient.auth.getSession().then(({data})=>{if(data?.session?.user){modal.classList.add('show');openMemberArea(data.session.user).catch(()=>{});}});
+function showPasswordRecovery(user){
+ modal.classList.add('show');
+ document.getElementById('modalTitle').textContent='تغيير كلمة السر';
+ document.getElementById('modalDesc').textContent='اختار كلمة سر جديدة وآمنة لحسابك.';
+ form.style.display='none';
+ document.getElementById('authSwitchRow').style.display='none';
+ document.getElementById('profileStage').style.display='none';
+ const stage=document.getElementById('recoveryStage');
+ stage.style.display='block';
+ stage.innerHTML=`<form id="recoveryForm"><div class="field"><label for="newPassword">كلمة السر الجديدة</label><div class="password-wrap"><input id="newPassword" type="password" minlength="8" autocomplete="new-password" required><button class="toggle-password" id="newPasswordToggle" type="button" aria-label="إظهار كلمة السر" aria-pressed="false">👁️ إظهار</button></div></div><p id="recoveryStatus" class="status" role="status" aria-live="polite"></p><button class="btn primary" id="recoverySubmit" type="submit" style="width:100%">حفظ كلمة السر الجديدة</button></form>`;
+ const field=document.getElementById('newPassword');
+ document.getElementById('newPasswordToggle').addEventListener('click',()=>{const visible=field.type==='password';field.type=visible?'text':'password';const b=document.getElementById('newPasswordToggle');b.textContent=visible?'🙈 إخفاء':'👁️ إظهار';b.setAttribute('aria-pressed',String(visible));});
+ document.getElementById('recoveryForm').addEventListener('submit',async(event)=>{
+  event.preventDefault();const btn=document.getElementById('recoverySubmit');const status=document.getElementById('recoveryStatus');
+  if(field.value.length<8){status.textContent='كلمة السر خاصها تكون من 8 أحرف على الأقل.';status.className='status error';return;}
+  btn.disabled=true;btn.textContent='جارٍ الحفظ...';status.textContent='';
+  try{const {error}=await supabaseClient.auth.updateUser({password:field.value});if(error)throw error;field.value='';stage.innerHTML='<p class="status success">تبدلات كلمة السر بنجاح. تقدر دابا تستعملها للدخول.</p><button class="btn primary" id="continueAfterRecovery" type="button">متابعة</button>';document.getElementById('continueAfterRecovery').addEventListener('click',()=>openMemberArea(user));}
+  catch(error){status.textContent='تعذر تغيير كلمة السر. عاود طلب رابط جديد وحاول مرة أخرى.';status.className='status error';btn.disabled=false;btn.textContent='حفظ كلمة السر الجديدة';}
+ });
+}
+document.getElementById('forgotPassword').addEventListener('click',async()=>{
+ const email=document.getElementById('authEmail').value.trim();
+ if(!email){message.textContent='دخل البريد الإلكتروني أولاً، ثم اطلب رابط الاستعادة.';return;}
+ const button=document.getElementById('forgotPassword');button.disabled=true;button.textContent='جارٍ إرسال الرابط...';message.textContent='';
+ try{
+  const {error}=await supabaseClient.auth.resetPasswordForEmail(email,{redirectTo:location.origin});
+  if(error) throw error;
+  message.textContent='إذا كان البريد مسجلاً، غادي توصلك رسالة فيها رابط تغيير كلمة السر. تفقد صندوق الرسائل والرسائل غير المرغوب فيها.';
+ }catch(error){message.textContent='تعذر إرسال رابط الاستعادة حالياً. تأكد من البريد والاتصال وحاول مرة أخرى.';}
+ finally{button.disabled=false;button.textContent='نسيت كلمة السر؟ إرسال رابط الاستعادة';}
+});
+document.querySelectorAll('.toggle-password').forEach(button=>button.addEventListener('click',()=>{
+ const field=document.getElementById(button.dataset.passwordTarget);
+ const visible=field.type==='password'; field.type=visible?'text':'password';
+ button.textContent=visible?'🙈 إخفاء':'👁️ إظهار';
+ button.setAttribute('aria-pressed',String(visible));
+}));
+function friendlyAuthError(error){
+ const code=String(error?.code||'').toLowerCase();
+ const detail=String(error?.message||'').toLowerCase();
+ if(code==='invalid_credentials'||detail.includes('invalid login credentials')) return 'البريد الإلكتروني أو كلمة السر غير صحيحة. راجع المعلومات وحاول مرة أخرى.';
+ if(code==='email_not_confirmed'||detail.includes('email not confirmed')) return 'خاصك تأكد البريد الإلكتروني من الرسالة اللي توصلك، ومن بعد عاود الدخول.';
+ if(detail.includes('already registered')||detail.includes('user already exists')) return 'هاد البريد الإلكتروني مسجل من قبل. جرّب تسجيل الدخول.';
+ if(detail.includes('terms_required')) return 'خاصك توافق على الشروط والخصوصية قبل إنشاء الحساب.';
+ if(detail.includes('password')||detail.includes('weak')) return 'كلمة السر ما مستوفياش شروط الأمان. استعمل 8 أحرف على الأقل.';
+ if(detail.includes('fetch')||detail.includes('network')) return 'وقع مشكل فالاتصال. تأكد من الإنترنت وحاول مرة أخرى.';
+ return 'ما قدرناش نكملو العملية دابا. راجع المعلومات وحاول مرة أخرى.';
+}
+form.addEventListener('submit', async (event)=>{
+ event.preventDefault();
+ const email = document.getElementById('authEmail').value.trim();
+ const pass = password.value;
+ const submit = document.getElementById('authSubmit');
+ if(authMode === 'register' && pass !== confirmPassword.value){message.textContent='كلمتا السر غير متطابقتين.'; return;}
+ submit.disabled = true; submit.textContent = 'جارٍ المعالجة...'; message.textContent='';
+ try {
+  if(authMode === 'register'){
+   const options = {};
+   if(location.protocol === 'https:' || location.protocol === 'http:') options.emailRedirectTo = location.origin;
+   options.data = {terms_accepted_at:new Date().toISOString(), privacy_accepted_at:new Date().toISOString()};
+   if(!document.getElementById('acceptTerms').checked) throw new Error('terms_required');
+   const {data,error} = await supabaseClient.auth.signUp({email,password:pass,options});
+   if(error) throw error;
+   if(data.session && data.user){
+    password.value='';confirmPassword.value='';
+    await openMemberArea(data.user);
+   }else{
+    password.value='';confirmPassword.value='';
+    authMode = 'login'; updateAuthForm();
+    message.textContent = 'تم إرسال طلب إنشاء الحساب. افتح بريدك الإلكتروني واضغط رابط التأكيد، ثم ارجع لتسجيل الدخول.';
+   }
+  } else {
+   const {data,error} = await supabaseClient.auth.signInWithPassword({email,password:pass});
+   if(error) throw error;
+   await openMemberArea(data.user);
+  }
+ } catch(error){ message.textContent = friendlyAuthError(error); }
+ finally {submit.disabled=false; submit.textContent=authMode==='register'?'إنشاء حساب':'دخول';}
+});
+
+async function openMemberArea(user){
+ const {data:profile,error}=await supabaseClient.from('profiles')
+  .select('id,display_name,country,birth_date,gender,marriage_intent,bio,city,education,occupation,marital_status,is_searchable')
+  .eq('id',user.id).maybeSingle();
+ if(error) throw new Error('تعذر التحقق من الملف الشخصي.');
+ document.getElementById('modalTitle').textContent='فضاء العضو في وِصال';
+ document.getElementById('modalDesc').textContent='تحكم في ملفك، وابحث عن توافق جاد، وتواصل باحترام.';
+ form.style.display='none';document.getElementById('authSwitchRow').style.display='none';
+ const stage=document.getElementById('profileStage');stage.style.display='block';
+ document.querySelector('.dialog').classList.add('member-dialog');
+ if(!profile || !profile.display_name || profile.display_name==='عضو وِصال'){
+  stage.innerHTML=`<div class="profile-stage"><h3>أكمل ملفك الشخصي</h3><p>معلوماتك الخاصة لا تظهر في نتائج البحث. تاريخ الميلاد مطلوب للتحقق من شرط 18 سنة.</p>
+   <form id="profileForm"><div class="dash-grid">
+    <div class="field"><label>الاسم الظاهر</label><input id="profileName" maxlength="80" required value="${escapeHtml(profile?.display_name==='عضو وِصال'?'':profile?.display_name||'')}"></div>
+    <div class="field"><label>البلد</label><input id="profileCountry" maxlength="80" required value="${escapeHtml(profile?.country||'')}" placeholder="المغرب"></div>
+    <div class="field"><label>تاريخ الميلاد</label><input id="profileBirthDate" type="date" required value="${escapeHtml(profile?.birth_date||'')}"></div>
+    <div class="field"><label>الجنس</label><select id="profileGender"><option value="">اختياري</option><option value="رجل" ${profile?.gender==='رجل'?'selected':''}>رجل</option><option value="امرأة" ${profile?.gender==='امرأة'?'selected':''}>امرأة</option></select></div>
+    <div class="field"><label>المدينة (اختياري)</label><input id="profileCity" maxlength="80" value="${escapeHtml(profile?.city||'')}"></div>
+    <div class="field"><label>الحالة الاجتماعية (اختياري)</label><select id="profileMarital"><option value="">أفضل عدم التحديد</option><option>أعزب/عزباء</option><option>مطلق/مطلقة</option><option>أرمل/أرملة</option></select></div>
+    <div class="field"><label>الطول بالسنتيمتر (اختياري)</label><input id="profileHeight" type="number" min="120" max="230" placeholder="مثال: 170"></div>
+    <div class="field"><label>البنية الجسدية (اختياري)</label><select id="profileBuild"><option value="">أفضل عدم التحديد</option><option value="slim">نحيفة</option><option value="average">متوسطة</option><option value="athletic">رياضية</option><option value="curvy">ممتلئة</option><option value="broad">عريضة البنية</option><option value="prefer_not_say">أفضل عدم الإجابة</option></select></div>
+    <div class="field"><label>لون البشرة (اختياري)</label><select id="profileSkin"><option value="">أفضل عدم التحديد</option><option value="very_fair">فاتحة جداً</option><option value="fair">فاتحة</option><option value="medium">قمحية</option><option value="olive">زيتونية</option><option value="brown">سمراء</option><option value="dark">داكنة</option><option value="prefer_not_say">أفضل عدم الإجابة</option></select></div>
+    <div class="field"><label>المستوى الدراسي (اختياري)</label><input id="profileEducation" maxlength="100"></div>
+    <div class="field"><label>المهنة (اختياري)</label><input id="profileOccupation" maxlength="100"></div>
+    <div class="field"><label>لون العينين (اختياري)</label><select id="profileEyes"><option value="">أفضل عدم التحديد</option><option value="brown">بني</option><option value="black">أسود</option><option value="green">أخضر</option><option value="blue">أزرق</option><option value="hazel">عسلي</option><option value="gray">رمادي</option></select></div>
+    <div class="field"><label>لون الشعر (اختياري)</label><select id="profileHair"><option value="">أفضل عدم التحديد</option><option value="black">أسود</option><option value="brown">بني</option><option value="blonde">أشقر</option><option value="red">أحمر</option><option value="gray">رمادي</option><option value="other">آخر</option></select></div>
+    <div class="field"><label>سمات الشخصية (اختياري)</label><input id="profilePersonality" maxlength="300" placeholder="هادئ، اجتماعي، طموح..."></div>
+    <div class="field"><label>الهوايات والاهتمامات (اختياري)</label><input id="profileHobbies" maxlength="300" placeholder="القراءة، السفر، الرياضة..."></div>
+    <div class="field full"><label>وصف إضافي للمظهر (اختياري)</label><input id="profileAppearance" maxlength="300" placeholder="وصف محترم تختار مشاركته"></div>
+
+    <div class="field full"><label style="display:flex;gap:9px;align-items:center;font-weight:400"><input id="profileFamily" type="checkbox"> أرغب في إشراك الأسرة أو الولي في مرحلة التعارف</label></div>
+    <div class="field" style="grid-column:1/-1"><label>نبذة مختصرة (اختياري)</label><textarea id="profileBio" maxlength="1200" rows="3" style="border:1px solid #ded8ca;border-radius:10px;padding:11px">${escapeHtml(profile?.bio||'')}</textarea></div>
+   </div><div class="note">التسجيل للبالغين من 18 سنة فما فوق. إظهار ملفك في البحث اختياري ويمكنك تغييره لاحقاً.</div>
+   <p id="profileStatus" class="status" role="status"></p><button class="btn primary" id="saveProfileBtn" type="submit" style="width:100%">حفظ ومتابعة</button></form></div>`;
+  document.getElementById('profileForm').addEventListener('submit',async e=>{
+   e.preventDefault();const btn=document.getElementById('saveProfileBtn'),st=document.getElementById('profileStatus');
+   const name=document.getElementById('profileName').value.trim(),country=document.getElementById('profileCountry').value.trim(),dob=document.getElementById('profileBirthDate').value;
+   if(!name||!country||!dob){st.textContent='عمرّ الخانات المطلوبة.';st.className='status error';return;}
+   if(!isAtLeast18(dob)){st.textContent='وِصال مخصصة للبالغين من 18 سنة فما فوق.';st.className='status error';return;}
+   btn.disabled=true;btn.textContent='جارٍ الحفظ...';
+   const payload={id:user.id,display_name:name,country,birth_date:dob,gender:document.getElementById('profileGender').value||null,city:document.getElementById('profileCity').value.trim()||null,bio:document.getElementById('profileBio').value.trim()||null,marital_status:document.getElementById('profileMarital').value||null,height_cm:Number(document.getElementById('profileHeight').value)||null,body_build:document.getElementById('profileBuild').value||null,skin_tone:document.getElementById('profileSkin').value||null,education:document.getElementById('profileEducation').value.trim()||null,occupation:document.getElementById('profileOccupation').value.trim()||null,eye_color:document.getElementById('profileEyes').value||null,hair_color:document.getElementById('profileHair').value||null,personality:document.getElementById('profilePersonality').value.trim()||null,hobbies:document.getElementById('profileHobbies').value.trim()||null,appearance_notes:document.getElementById('profileAppearance').value.trim()||null,marriage_intent:true,family_involvement:document.getElementById('profileFamily').checked,terms_accepted_at:user.user_metadata?.terms_accepted_at||new Date().toISOString(),privacy_accepted_at:user.user_metadata?.privacy_accepted_at||new Date().toISOString()};
+   try{const {error}=await supabaseClient.from('profiles').upsert(payload,{onConflict:'id'});if(error)throw error;await renderMemberDashboard(user);}catch(err){st.textContent=friendlyProfileError(err);st.className='status error';btn.disabled=false;btn.textContent='حفظ ومتابعة';}
+  });
+  return;
+ }
+ await renderMemberDashboard(user);
+}
+function friendlyProfileError(err){const m=String(err?.message||'').toLowerCase();if(m.includes('18 years'))return 'خاص يكون العمر 18 سنة على الأقل.';return 'تعذر حفظ الملف. راجع المعلومات وحاول مرة أخرى.';}
+async function renderMemberDashboard(user){
+ const stage=document.getElementById('profileStage');stage.style.display='block';
+ const {data:profile,error}=await supabaseClient.from('profiles').select('display_name,country,birth_date,gender,bio,city,is_searchable,family_involvement,height_cm,body_build,skin_tone,education,occupation,personality,hobbies,eye_color,hair_color,appearance_notes,marital_status').eq('id',user.id).single();
+ if(error){stage.innerHTML='<p class="dash-status">تعذر تحميل ملفك. حاول تسجيل الخروج ثم الدخول.</p>';return;}
+ stage.innerHTML=`<div class="dash-top"><div><h3 style="color:var(--green);margin:0">مرحباً ${escapeHtml(profile.display_name)}</h3><p class="small-muted">${escapeHtml(profile.country||'')} · فضاء خاص بالأعضاء</p></div><button class="btn outline" id="dashSignOut">تسجيل الخروج</button></div>
+ <div class="dash-tabs" role="tablist"><button class="active" data-tab="home">ملفي</button><button data-tab="search">البحث عن شريك</button><button data-tab="chats">المحادثات</button><button data-tab="notifications">الإشعارات</button><button data-tab="requests">طلبات الهاتف</button><button data-tab="settings">الخصوصية والإعدادات</button>${user.app_metadata?.role==='admin'?'<button data-tab="admin">إدارة البلاغات</button>':''}</div><div id="dashPane"></div>`;
+ document.getElementById('dashSignOut').addEventListener('click',signOut);
+ document.querySelectorAll('[data-tab]').forEach(b=>b.addEventListener('click',()=>{document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('active',x===b));loadDashboardTab(user,b.dataset.tab);}));
+ await loadDashboardTab(user,'home');
+}
+async function loadDashboardTab(user,tab){
+ const pane=document.getElementById('dashPane');if(!pane)return;
+ if(tab==='home'){
+  const {data:p}=await supabaseClient.from('profiles').select('display_name,country,birth_date,gender,bio,city,is_searchable,family_involvement,height_cm,body_build,skin_tone,education,occupation,personality,hobbies,eye_color,hair_color,appearance_notes,marital_status').eq('id',user.id).single();
+  pane.innerHTML=`<div class="dash-panel"><h3>ملفي الشخصي</h3><p>الاسم: <b>${escapeHtml(p.display_name)}</b></p><p>البلد: ${escapeHtml(p.country||'غير محدد')} · المدينة: ${escapeHtml(p.city||'غير محددة')}</p><p>العمر: ${p.birth_date?calculateAge(p.birth_date)+' سنة':'غير محدد'} · الطول: ${p.height_cm?p.height_cm+' سم':'غير محدد'}</p><p>البنية: ${escapeHtml(profileChoice(p.body_build))} · البشرة: ${escapeHtml(profileChoice(p.skin_tone))}</p><p>العينان: ${escapeHtml(profileColorLabel(p.eye_color))} · الشعر: ${escapeHtml(profileColorLabel(p.hair_color))}</p><p>الدراسة: ${escapeHtml(p.education||'غير محدد')} · المهنة: ${escapeHtml(p.occupation||'غير محددة')}</p><p>الشخصية: ${escapeHtml(p.personality||'غير محددة')} · الاهتمامات: ${escapeHtml(p.hobbies||'غير محددة')}</p><p>إشراك الأسرة أو الولي: ${p.family_involvement?'أرغب في ذلك':'لا يوجد اختيار'}</p><p>${escapeHtml(p.bio||'لم تضف نبذة بعد.')}</p><label style="display:flex;gap:9px;align-items:center"><input id="searchableToggle" type="checkbox" ${p.is_searchable?'checked':''}> أوافق على إظهار ملفي في نتائج البحث للأعضاء المسجلين</label><p class="small-muted">لن يظهر بريدك الإلكتروني أو تاريخ ميلادك الكامل في البحث.</p><div class="member-actions"><button class="btn primary" id="saveVisibility">حفظ الاختيار</button><button class="btn outline" id="editProfileBtn">تعديل ملفي</button></div><span id="homeStatus" class="small-muted"></span></div>`;
+  document.getElementById('saveVisibility').onclick=async()=>{const val=document.getElementById('searchableToggle').checked;const {error}=await supabaseClient.from('profiles').update({is_searchable:val}).eq('id',user.id);document.getElementById('homeStatus').textContent=error?'تعذر الحفظ.':'تم حفظ اختيارك.';};
+  document.getElementById('editProfileBtn').onclick=()=>showProfileEditor(user);
+ }else if(tab==='search'){
+  pane.innerHTML=`<div class="dash-panel"><h3>بحث محترم حسب التفضيلات</h3><div class="dash-grid"><div class="field"><label>الجنس</label><select id="fGender"><option value="">الكل</option><option value="امرأة">امرأة</option><option value="رجل">رجل</option></select></div><div class="field"><label>البلد</label><input id="fCountry" placeholder="اتركه فارغاً للكل"></div><div class="field"><label>أقل عمر</label><input id="fMin" type="number" min="18" max="100" value="18"></div><div class="field"><label>أكبر عمر</label><input id="fMax" type="number" min="18" max="100" value="100"></div></div><div class="member-actions"><button class="btn primary" id="runSearch">بحث</button><button class="btn outline" id="savePrefs">حفظ تفضيلاتي</button></div><div id="searchResults" class="dash-grid" style="margin-top:15px"></div></div>`;
+  const {data:savedPrefs}=await supabaseClient.from('profile_preferences').select('min_age,max_age,preferred_gender,preferred_country').eq('user_id',user.id).maybeSingle();
+  if(savedPrefs){document.getElementById('fMin').value=savedPrefs.min_age||18;document.getElementById('fMax').value=savedPrefs.max_age||100;document.getElementById('fGender').value=savedPrefs.preferred_gender==='woman'?'امرأة':savedPrefs.preferred_gender==='man'?'رجل':'';document.getElementById('fCountry').value=savedPrefs.preferred_country||'';}
+  document.getElementById('runSearch').onclick=()=>runMemberSearch(user);
+  document.getElementById('savePrefs').onclick=async()=>{const min=Number(document.getElementById('fMin').value||18),max=Number(document.getElementById('fMax').value||100);if(min<18||max>100||min>max){alert('راجع نطاق العمر.');return;}const {error}=await supabaseClient.from('profile_preferences').upsert({user_id:user.id,min_age:min,max_age:max,preferred_gender:document.getElementById('fGender').value==='امرأة'?'woman':document.getElementById('fGender').value==='رجل'?'man':'any',preferred_country:document.getElementById('fCountry').value.trim()||null},{onConflict:'user_id'});alert(error?'تعذر حفظ التفضيلات.':'تم حفظ تفضيلات البحث.');};
+  await runMemberSearch(user);
+ }else if(tab==='chats'){
+  pane.innerHTML='<div class="dash-panel"><h3>المحادثات</h3><div class="chat-free-note">فتح المحادثة والتوافق مجانيان للطرفين. لكل عضو رصيد يومي من الرسائل المجانية.</div><div id="messageQuota" class="dash-status">جارٍ تحميل رصيد الرسائل...</div><div id="conversationList">جارٍ التحميل...</div><div id="chatArea"></div></div>';
+  await refreshMessageQuota();
+  const {data,error}=await supabaseClient.rpc('get_wisal_conversations');const list=document.getElementById('conversationList');
+  if(error){list.textContent='تعذر تحميل المحادثات حالياً.';return;}if(!data?.length){list.textContent='مازال ما عندك حتى تطابق متبادل. ملي يوقع توافق غادي تبان المحادثة هنا.';return;}
+  list.innerHTML=data.map(c=>`<div class="member-card"><b>${escapeHtml(c.display_name)}</b><p>${escapeHtml(c.country||'')} · ${c.age??'—'} سنة</p><p>${escapeHtml(c.last_message||'بداية محادثة جديدة')}</p><button class="btn outline" data-chat="${c.conversation_id}">فتح المحادثة</button></div>`).join('');
+  list.querySelectorAll('[data-chat]').forEach(b=>b.onclick=()=>openChat(b.dataset.chat,user));
+ }else if(tab==='notifications'){
+  pane.innerHTML='<div class="dash-panel"><h3>الإشعارات</h3><p class="small-muted">تنبيهات الإعجاب والتوافق والرسائل وطلبات مشاركة الهاتف.</p><div id="notificationsList">جارٍ تحميل الإشعارات...</div></div>';
+  const target=document.getElementById('notificationsList');
+  const {data:items,error}=await supabaseClient.from('member_notifications').select('id,event_type,title,body,created_at,read_at').eq('recipient_id',user.id).order('created_at',{ascending:false}).limit(50);
+  if(error){target.textContent='تعذر تحميل الإشعارات حالياً.';return;}
+  if(!items?.length){target.textContent='لا توجد إشعارات جديدة حالياً.';return;}
+  target.innerHTML=items.map(n=>`<article class="member-card" style="${n.read_at?'opacity:.78':'border-inline-start:4px solid var(--gold)'}"><b>${escapeHtml(n.title)}</b><p>${escapeHtml(n.body)}</p><p class="small-muted">${new Date(n.created_at).toLocaleString('ar-MA')} · ${n.read_at?'مقروء':'جديد'}</p>${n.read_at?'':`<button class="btn outline" data-read-notice="${n.id}">تعليم كمقروء</button>`}</article>`).join('');
+  target.querySelectorAll('[data-read-notice]').forEach(b=>b.onclick=async()=>{b.disabled=true;const {error}=await supabaseClient.from('member_notifications').update({read_at:new Date().toISOString()}).eq('id',b.dataset.readNotice).eq('recipient_id',user.id);if(error){b.disabled=false;alert('تعذر تحديث الإشعار.');return;}await loadDashboardTab(user,'notifications');});
+ }else if(tab==='requests'){
+  pane.innerHTML='<div class="dash-panel"><h3>طلبات مشاركة رقم الهاتف</h3><p class="small-muted">لا تتم مشاركة أي رقم إلا بعد موافقة صريحة من صاحبه.</p><div class="field"><label>رقم هاتفي الخاص (لا يظهر إلا بعد الموافقة)</label><input id="myPrivatePhone" maxlength="32" placeholder="أدخل رقمك مع رمز الدولة"></div><button class="btn primary" id="savePrivatePhone">حفظ رقمي الخاص</button><p id="phoneSaveStatus" class="small-muted"></p><div id="phoneRequests" style="margin-top:15px">جارٍ التحميل...</div></div>';
+  document.getElementById('savePrivatePhone').onclick=async()=>{const phone=document.getElementById('myPrivatePhone').value.trim();const {error}=await supabaseClient.rpc('set_my_private_phone',{p_phone:phone});document.getElementById('phoneSaveStatus').textContent=error?'تعذر حفظ الرقم.':'تم حفظ الرقم في مساحة خاصة وآمنة.';};
+  const {data,error}=await supabaseClient.from('phone_share_requests').select('id,owner_id,requester_id,status,created_at').or(`owner_id.eq.${user.id},requester_id.eq.${user.id}`).order('created_at',{ascending:false});const box=document.getElementById('phoneRequests');
+  if(error){box.textContent='تعذر تحميل الطلبات.';return;}if(!data?.length){box.textContent='لا توجد طلبات حالياً.';return;}
+  box.innerHTML=data.map(r=>`<div class="member-card"><p>${r.owner_id===user.id?'طلب وارد لمشاركة رقمك':'طلب أرسلته لمشاركة رقم العضو'}</p><b>${r.status==='pending'?'في انتظار الرد':r.status==='approved'?'تمت الموافقة':'تم الرفض'}</b>${r.owner_id===user.id&&r.status==='pending'?`<div class="member-actions"><button class="btn primary" data-approve="${r.id}">موافقة</button><button class="btn outline" data-decline="${r.id}">رفض</button></div>`:''}${r.owner_id===user.id&&r.status==='approved'?`<button class="btn outline" data-revoke="${r.id}">إلغاء مشاركة الرقم</button>`:''}${r.requester_id===user.id&&r.status==='approved'?`<button class="btn primary" data-show-phone="${r.owner_id}">عرض الرقم الموافق عليه</button><p class="small-muted" id="sharedPhone_${r.id}"></p>`:''}</div>`).join('');
+  box.querySelectorAll('[data-approve],[data-decline]').forEach(b=>b.onclick=async()=>{const id=b.dataset.approve||b.dataset.decline;const {error}=await supabaseClient.rpc('respond_phone_share_request',{p_request_id:id,p_approve:!!b.dataset.approve});if(error)alert('تعذر تحديث الطلب.');else loadDashboardTab(user,'requests');});
+  box.querySelectorAll('[data-revoke]').forEach(b=>b.onclick=async()=>{if(!confirm('واش متأكد بغيتي تلغي الموافقة على مشاركة الرقم؟'))return;const {error}=await supabaseClient.rpc('revoke_phone_share',{p_request_id:b.dataset.revoke});if(error)alert('تعذر إلغاء المشاركة.');else loadDashboardTab(user,'requests');});
+  box.querySelectorAll('[data-show-phone]').forEach(b=>b.onclick=async()=>{const {data:phone,error}=await supabaseClient.rpc('get_approved_member_phone',{p_member_id:b.dataset.showPhone});const out=b.nextElementSibling;out.textContent=error?'تعذر جلب الرقم.':(phone||'العضو لم يضف رقماً بعد.');});
+ }else if(tab==='admin'){
+  if(user.app_metadata?.role!=='admin'){pane.textContent='غير مصرح لك بالدخول.';return;}
+  pane.innerHTML=`<div class="dash-panel"><h3>إدارة البلاغات</h3><p class="small-muted">هذه الصفحة مخصصة للمشرفين المعتمدين فقط. راجع البلاغ قبل اتخاذ إجراء.</p><div class="member-actions"><select id="reportStatusFilter"><option value="open">مفتوحة</option><option value="reviewing">قيد المراجعة</option><option value="all">الكل</option><option value="resolved">تم الحل</option><option value="dismissed">مرفوضة</option></select><button class="btn primary" id="loadReports">تحديث</button></div><div id="adminReports">جارٍ التحميل...</div></div>`;
+  const loadReports=async()=>{const target=document.getElementById('adminReports');target.textContent='جارٍ التحميل...';const {data,error}=await supabaseClient.rpc('admin_list_wisal_reports',{p_status:document.getElementById('reportStatusFilter').value,p_limit:100});if(error){target.textContent='تعذر تحميل البلاغات. تأكد من صلاحيات المشرف.';return;}if(!data?.length){target.textContent='لا توجد بلاغات في هذا التصنيف.';return;}target.innerHTML=data.map(r=>`<article class="member-card"><b>بلاغ: ${escapeHtml(r.reason)}</b><p>رقم العضو المبلّغ عنه: ${escapeHtml(r.reported_user_id)}</p><p>رقم المبلّغ: ${escapeHtml(r.reporter_id)}</p><p>${escapeHtml(r.details||'لا توجد تفاصيل إضافية')}</p><p>الحالة: ${escapeHtml(r.status)} · ${new Date(r.created_at).toLocaleString('ar-MA')}</p><textarea data-note="${r.report_id}" maxlength="2000" placeholder="ملاحظة المشرف (اختياري)"></textarea><div class="member-actions"><button class="btn outline" data-review="${r.report_id}">قيد المراجعة</button><button class="btn primary" data-resolve="${r.report_id}">تم الحل</button><button class="btn outline" data-dismiss="${r.report_id}">رفض البلاغ</button></div></article>`).join('');target.querySelectorAll('[data-review],[data-resolve],[data-dismiss]').forEach(btn=>btn.onclick=async()=>{const id=btn.dataset.review||btn.dataset.resolve||btn.dataset.dismiss;const status=btn.dataset.review?'reviewing':btn.dataset.resolve?'resolved':'dismissed';const note=target.querySelector(`[data-note="${id}"]`)?.value||null;const {error}=await supabaseClient.rpc('admin_update_wisal_report',{p_report_id:id,p_status:status,p_note:note});if(error){alert('تعذر تحديث البلاغ.');return;}await loadReports();});};
+  document.getElementById('loadReports').onclick=loadReports;await loadReports();
+ }else if(tab==='settings'){
+  pane.innerHTML=`<div class="dash-panel"><h3>الخصوصية والأمان</h3><p>ملفك غير ظاهر في البحث حتى تختار ذلك بنفسك. رقم الهاتف مخزن بشكل خاص ولا يُكشف إلا بعد موافقتك الصريحة على طلب محدد.</p><ul><li>البريد الإلكتروني وتاريخ الميلاد الكامل لا يظهران في نتائج البحث.</li><li>الحظر يمنع ظهور الملفات لبعضها ويوقف المحادثة.</li><li>يمكنك التبليغ عن أي سلوك مخالف.</li></ul><p class="small-muted">فحص كلمات المرور المسرّبة ما زال يحتاج تفعيل من إعدادات المشروع قبل الإطلاق.</p><h4>الأعضاء المحظورون</h4><div id="blockedMembers">جارٍ التحميل...</div><div class="member-actions"><button class="btn outline" id="settingsSignOut">تسجيل الخروج</button><button class="btn outline" id="deleteMyAccount" style="border-color:#b42318;color:#b42318">حذف حسابي نهائياً</button></div><p id="deleteAccountStatus" class="small-muted"></p></div>`;document.getElementById('settingsSignOut').onclick=signOut;
+  document.getElementById('deleteMyAccount').onclick=async()=>{if(!confirm('هذا الإجراء نهائي: سيتم حذف حسابك وملفك ومعلوماتك المرتبطة به. هل تريد المتابعة؟'))return;if(!confirm('تأكيد أخير: حذف حساب وِصال نهائياً؟'))return;const btn=document.getElementById('deleteMyAccount'),status=document.getElementById('deleteAccountStatus');btn.disabled=true;status.textContent='جارٍ حذف الحساب...';const {data,error}=await supabaseClient.functions.invoke('delete-account',{body:{}});if(error||!data?.success){status.textContent='تعذر حذف الحساب. لم نؤكد إتمام الحذف؛ تواصل مع الدعم أو أعد المحاولة لاحقاً.';btn.disabled=false;return;}await supabaseClient.auth.signOut({scope:'local'});status.textContent='تم حذف الحساب والبيانات المرتبطة به.';document.getElementById('profileStage').innerHTML='';document.getElementById('profileStage').style.display='none';document.querySelector('.dialog').classList.remove('member-dialog');form.reset();updateAuthForm();};
+  const blocked=document.getElementById('blockedMembers');const {data:blocks,error:blockErr}=await supabaseClient.from('member_blocks').select('blocked_id,created_at').eq('blocker_id',user.id).order('created_at',{ascending:false});if(blockErr){blocked.textContent='تعذر تحميل قائمة الحظر.';}else if(!blocks?.length){blocked.textContent='لا توجد حسابات محظورة.';}else{blocked.innerHTML=blocks.map(x=>`<div class="member-actions"><span class="small-muted">عضو محظور</span><button class="btn outline" data-unblock="${x.blocked_id}">إلغاء الحظر</button></div>`).join('');blocked.querySelectorAll('[data-unblock]').forEach(b=>b.onclick=async()=>{if(!confirm('إلغاء حظر هذا العضو؟'))return;const {error}=await supabaseClient.from('member_blocks').delete().eq('blocker_id',user.id).eq('blocked_id',b.dataset.unblock);if(error)alert('تعذر إلغاء الحظر.');else loadDashboardTab(user,'settings');});}
+ }
+}
+async function showProfileEditor(user){
+ const pane=document.getElementById('dashPane');
+ const {data:p,error}=await supabaseClient.from('profiles').select('display_name,country,birth_date,gender,city,bio,marital_status,family_involvement,height_cm,body_build,skin_tone,education,occupation,personality,hobbies,eye_color,hair_color,appearance_notes').eq('id',user.id).single();
+ if(error){pane.innerHTML='<div class="dash-status">تعذر تحميل الملف للتعديل.</div>';return;}
+ pane.innerHTML=`<div class="dash-panel"><h3>ملفي الشخصي — معلومات اختيارية</h3><p class="small-muted">عمرّ غير المعلومات اللي مرتاح تشاركها. تقدر تخلي أي خانة فارغة.</p><form id="editProfileForm"><div class="dash-grid">
+ <div class="field"><label>الاسم الظاهر</label><input id="editName" maxlength="80" required value="${escapeHtml(p.display_name||'')}"></div>
+ <div class="field"><label>البلد</label><input id="editCountry" maxlength="80" required value="${escapeHtml(p.country||'')}"></div>
+ <div class="field"><label>تاريخ الميلاد (خاص للتحقق من السن)</label><input id="editBirth" type="date" required value="${escapeHtml(p.birth_date||'')}"></div>
+ <div class="field"><label>الجنس</label><select id="editGender"><option value="">اختياري</option><option value="رجل" ${p.gender==='رجل'?'selected':''}>رجل</option><option value="امرأة" ${p.gender==='امرأة'?'selected':''}>امرأة</option></select></div>
+ <div class="field"><label>المدينة</label><input id="editCity" maxlength="80" value="${escapeHtml(p.city||'')}"></div>
+ <div class="field"><label>الحالة الاجتماعية</label><select id="editMarital"><option value="">أفضل عدم التحديد</option><option value="أعزب/عزباء" ${p.marital_status==='أعزب/عزباء'?'selected':''}>أعزب/عزباء</option><option value="مطلق/مطلقة" ${p.marital_status==='مطلق/مطلقة'?'selected':''}>مطلق/مطلقة</option><option value="أرمل/أرملة" ${p.marital_status==='أرمل/أرملة'?'selected':''}>أرمل/أرملة</option></select></div>
+ <div class="field"><label>الطول بالسنتيمتر</label><input id="editHeight" type="number" min="120" max="230" value="${p.height_cm||''}" placeholder="مثلاً 170"></div>
+ <div class="field"><label>البنية الجسدية</label><select id="editBuild"><option value="">أفضل عدم التحديد</option><option value="slim" ${p.body_build==='slim'?'selected':''}>نحيفة</option><option value="average" ${p.body_build==='average'?'selected':''}>متوسطة</option><option value="athletic" ${p.body_build==='athletic'?'selected':''}>رياضية</option><option value="curvy" ${p.body_build==='curvy'?'selected':''}>ممتلئة</option><option value="broad" ${p.body_build==='broad'?'selected':''}>عريضة البنية</option><option value="prefer_not_say" ${p.body_build==='prefer_not_say'?'selected':''}>أفضل عدم التحديد</option></select></div>
+ <div class="field"><label>لون البشرة</label><select id="editSkin"><option value="">أفضل عدم التحديد</option><option value="very_fair" ${p.skin_tone==='very_fair'?'selected':''}>فاتحة جداً</option><option value="fair" ${p.skin_tone==='fair'?'selected':''}>فاتحة</option><option value="medium" ${p.skin_tone==='medium'?'selected':''}>متوسطة</option><option value="olive" ${p.skin_tone==='olive'?'selected':''}>قمحية</option><option value="brown" ${p.skin_tone==='brown'?'selected':''}>سمراء</option><option value="dark" ${p.skin_tone==='dark'?'selected':''}>داكنة</option><option value="prefer_not_say" ${p.skin_tone==='prefer_not_say'?'selected':''}>أفضل عدم التحديد</option></select></div>
+ <div class="field"><label>لون العينين</label><select id="editEyes"><option value="">أفضل عدم التحديد</option><option value="brown" ${p.eye_color==='brown'?'selected':''}>بني</option><option value="black" ${p.eye_color==='black'?'selected':''}>أسود</option><option value="green" ${p.eye_color==='green'?'selected':''}>أخضر</option><option value="blue" ${p.eye_color==='blue'?'selected':''}>أزرق</option><option value="hazel" ${p.eye_color==='hazel'?'selected':''}>عسلي</option><option value="gray" ${p.eye_color==='gray'?'selected':''}>رمادي</option></select></div>
+ <div class="field"><label>لون الشعر</label><select id="editHair"><option value="">أفضل عدم التحديد</option><option value="black" ${p.hair_color==='black'?'selected':''}>أسود</option><option value="brown" ${p.hair_color==='brown'?'selected':''}>بني</option><option value="blonde" ${p.hair_color==='blonde'?'selected':''}>أشقر</option><option value="red" ${p.hair_color==='red'?'selected':''}>أحمر</option><option value="gray" ${p.hair_color==='gray'?'selected':''}>رمادي</option><option value="other" ${p.hair_color==='other'?'selected':''}>آخر</option></select></div>
+ <div class="field"><label>المستوى الدراسي</label><input id="editEducation" maxlength="100" value="${escapeHtml(p.education||'')}"></div>
+ <div class="field"><label>المهنة</label><input id="editOccupation" maxlength="100" value="${escapeHtml(p.occupation||'')}"></div>
+ <div class="field"><label>سمات الشخصية</label><input id="editPersonality" maxlength="300" value="${escapeHtml(p.personality||'')}"></div>
+ <div class="field"><label>الهوايات والاهتمامات</label><input id="editHobbies" maxlength="300" value="${escapeHtml(p.hobbies||'')}"></div>
+ <div class="field full"><label>وصف إضافي اختياري</label><input id="editAppearance" maxlength="300" value="${escapeHtml(p.appearance_notes||'')}"></div>
+ <div class="field full"><label style="display:flex;gap:9px;align-items:center;font-weight:400"><input id="editFamily" type="checkbox" ${p.family_involvement?'checked':''}> أرغب في إشراك الأسرة أو الولي</label></div>
+ <div class="field full"><label>نبذة مختصرة</label><textarea id="editBio" maxlength="1200" rows="3" style="border:1px solid #ded8ca;border-radius:10px;padding:11px">${escapeHtml(p.bio||'')}</textarea></div>
+ </div><p id="editStatus" class="small-muted"></p><div class="member-actions"><button class="btn primary">حفظ التعديلات</button><button class="btn outline" type="button" id="cancelEdit">إلغاء</button></div></form></div>`;
+ document.getElementById('cancelEdit').onclick=()=>loadDashboardTab(user,'home');
+ document.getElementById('editProfileForm').onsubmit=async e=>{e.preventDefault();const dob=document.getElementById('editBirth').value,st=document.getElementById('editStatus');if(!isAtLeast18(dob)){st.textContent='تاريخ الميلاد خاصو يثبت أن العمر 18 سنة على الأقل.';return;}const heightValue=document.getElementById('editHeight').value; if(heightValue&&(Number(heightValue)<120||Number(heightValue)>230)){st.textContent='الطول خاصو يكون بين 120 و230 سنتيمتر.';return;}const payload={display_name:document.getElementById('editName').value.trim(),country:document.getElementById('editCountry').value.trim(),birth_date:dob,gender:document.getElementById('editGender').value||null,city:document.getElementById('editCity').value.trim()||null,marital_status:document.getElementById('editMarital').value||null,height_cm:heightValue?Number(heightValue):null,body_build:document.getElementById('editBuild').value||null,skin_tone:document.getElementById('editSkin').value||null,eye_color:document.getElementById('editEyes').value||null,hair_color:document.getElementById('editHair').value||null,education:document.getElementById('editEducation').value.trim()||null,occupation:document.getElementById('editOccupation').value.trim()||null,personality:document.getElementById('editPersonality').value.trim()||null,hobbies:document.getElementById('editHobbies').value.trim()||null,appearance_notes:document.getElementById('editAppearance').value.trim()||null,family_involvement:document.getElementById('editFamily').checked,bio:document.getElementById('editBio').value.trim()||null};const {error}=await supabaseClient.from('profiles').update(payload).eq('id',user.id);if(error){st.textContent=friendlyProfileError(error);return;}await loadDashboardTab(user,'home');};
+}
+async function runMemberSearch(user){
+ const box=document.getElementById('searchResults');box.innerHTML='<p class="small-muted">جارٍ البحث...</p>';
+ const min=Number(document.getElementById('fMin').value||18),max=Number(document.getElementById('fMax').value||100);
+ if(min<18||max>100||min>max){box.textContent='راجع نطاق العمر (من 18 إلى 100).';return;}
+ const {data,error}=await supabaseClient.rpc('search_wisal_members',{p_gender:document.getElementById('fGender').value||null,p_country:document.getElementById('fCountry').value.trim()||null,p_min_age:min,p_max_age:max,p_limit:30,p_offset:0});
+ if(error){box.textContent='تعذر البحث حالياً. تأكد من تفعيل ظهور ملفك أو حاول لاحقاً.';return;}if(!data?.length){box.textContent='ما لقيناش نتائج مطابقة حالياً. جرّب توسع البحث.';return;}
+ box.innerHTML=data.map(m=>`<article class="member-card"><h4>${escapeHtml(m.display_name)}</h4><p>${escapeHtml(m.country||'')} ${m.city?'· '+escapeHtml(m.city):''}</p><p>${m.age} سنة ${m.gender?'· '+escapeHtml(m.gender):''}</p><p>الطول: ${m.height_cm?m.height_cm+' سم':'غير محدد'} · البنية: ${profileChoice(m.body_build)} · البشرة: ${profileChoice(m.skin_tone)}</p><p>العينان: ${profileColorLabel(m.eye_color)} · الشعر: ${profileColorLabel(m.hair_color)}</p><p>الدراسة: ${escapeHtml(m.education||'غير محدد')} · المهنة: ${escapeHtml(m.occupation||'غير محددة')}</p><p>الشخصية: ${escapeHtml(m.personality||'غير محددة')} · الهوايات: ${escapeHtml(m.hobbies||'غير محددة')}</p><p>${escapeHtml(m.appearance_notes||'')} ${escapeHtml(m.bio||'لا توجد نبذة بعد.')}</p><div class="member-actions"><button class="btn primary" data-like="${m.member_id}">♥ إعجاب</button><button class="btn outline" data-skip="${m.member_id}">✕ تجاوز</button><button class="btn outline" data-block="${m.member_id}">حظر</button><button class="btn outline" data-report="${m.member_id}">تبليغ</button></div></article>`).join('');
+ box.querySelectorAll('[data-like]').forEach(b=>b.onclick=async()=>{b.disabled=true;const {data,error}=await supabaseClient.rpc('like_wisal_member',{p_member_id:b.dataset.like});if(error){alert(error.message?.includes('enable visibility')?'فعّل إظهار ملفك في البحث أولاً من تبويب ملفي.':'تعذر إرسال الإعجاب.');b.disabled=false;return;}alert(data?.[0]?.is_match?'مبروك! وقع توافق متبادل، تقدر تمشي للمحادثات.':'تم إرسال الإعجاب. إذا كان متبادلاً غادي يتفتح التواصل.');b.closest('.member-card').remove();if(!box.querySelector('.member-card'))await runMemberSearch(user);});
+ box.querySelectorAll('[data-skip]').forEach(b=>b.onclick=async()=>{b.disabled=true;const {error}=await supabaseClient.rpc('skip_wisal_member',{p_member_id:b.dataset.skip});if(error){alert('تعذر تجاوز هذا الملف.');b.disabled=false;return;}b.closest('.member-card').remove();if(!box.querySelector('.member-card'))await runMemberSearch(user);});
+ box.querySelectorAll('[data-block]').forEach(b=>b.onclick=async()=>{if(!confirm('واش متأكد بغيتي تحظر هاد العضو؟'))return;const {error}=await supabaseClient.from('member_blocks').insert({blocker_id:user.id,blocked_id:b.dataset.block});alert(error?'تعذر تنفيذ الحظر.':'تم حظر العضو.');b.closest('.member-card').remove();});
+ box.querySelectorAll('[data-report]').forEach(b=>b.onclick=async()=>{const choice=prompt('اختار سبب التبليغ:\n1 - حساب مزيف\n2 - مضايقة\n3 - محتوى غير لائق\n4 - احتيال\n5 - قاصر\n6 - سبب آخر');if(!choice)return;const reasons={'1':'fake_profile','2':'harassment','3':'inappropriate_content','4':'scam','5':'underage','6':'other'};const reason=reasons[choice.trim()];if(!reason){alert('اختار رقماً من 1 إلى 6.');return;}const details=(prompt('تفاصيل إضافية (اختياري)')||'').slice(0,2000)||null;const {error}=await supabaseClient.from('member_reports').insert({reporter_id:user.id,reported_user_id:b.dataset.report,reason,details});alert(error?'تعذر إرسال التبليغ.':'توصلنا بالتبليغ وسنراجعه.');});
+}
+async function refreshMessageQuota(){const el=document.getElementById('messageQuota');if(!el)return;const {data,error}=await supabaseClient.rpc('get_wisal_message_quota');if(error||!data?.length){el.textContent='تعذر تحميل رصيد الرسائل.';return;}const q=data[0];el.innerHTML=`رسائلك المجانية المتبقية اليوم: <b>${q.free_remaining} من ${q.daily_free_limit}</b> · الرسائل الإضافية: <b>${q.bonus_remaining}</b><br><span class="small-muted">تجدد الحصة يومياً حسب توقيت الخادم. الحد المجاني المقترح 20 رسالة، ومكافأة الإعلان غير مفعّلة حتى ربط مزوّد إعلانات موثوق.</span>`;}
+let activeChatChannel=null;
+async function openChat(conversationId,user){
+ if(activeChatChannel){await supabaseClient.removeChannel(activeChatChannel);activeChatChannel=null;}
+ const area=document.getElementById('chatArea');area.innerHTML='<div class="chat-tools"><b>محادثة خاصة بين الطرفين — فتح المحادثة مجاني</b><div class="member-actions"><button class="btn outline" id="chatPhoneBtn" type="button">طلب رقم الهاتف</button><button class="btn outline" id="chatBlockBtn" type="button">حظر هذا العضو</button></div></div><p class="small-muted">✓ تم الإرسال · <span class="read-mark">✓✓ تمت القراءة</span> باللون الأزرق</p><div class="chat-box" id="chatMessages">جارٍ تحميل الرسائل...</div><form id="chatForm" class="chat-compose"><input id="chatInput" maxlength="4000" placeholder="اكتب رسالة محترمة..." required><button class="btn primary">إرسال</button></form><p id="chatQuotaHint" class="small-muted"></p>';
+ await refreshChat(conversationId,user);
+ activeChatChannel=supabaseClient.channel('wisal-chat-'+conversationId).on('postgres_changes',{event:'*',schema:'public',table:'member_messages',filter:'conversation_id=eq.'+conversationId},()=>refreshChat(conversationId,user)).subscribe();
+ document.getElementById('chatPhoneBtn').onclick=async()=>{if(!confirm('إرسال طلب لصاحب الرقم؟ لن يظهر الرقم إلا إذا وافق بنفسه.'))return;const {data:conv}=await supabaseClient.from('member_conversations').select('match_id').eq('id',conversationId).single();const {data:match}=conv?await supabaseClient.from('member_matches').select('user_a,user_b').eq('id',conv.match_id).single():{data:null};const owner=match?(match.user_a===user.id?match.user_b:match.user_a):null;if(!owner){alert('تعذر تحديد العضو.');return;}const {error}=await supabaseClient.from('phone_share_requests').insert({owner_id:owner,requester_id:user.id,status:'pending'});if(error)alert('لم نتمكن من إرسال الطلب. تأكد أن العضو حفظ رقمه، أو أن هناك طلباً سابقاً ما زال مفتوحاً.');else alert('تم إرسال الطلب. انتظر موافقة صاحب الرقم.');};
+ document.getElementById('chatBlockBtn').onclick=async()=>{if(!confirm('حظر هذا العضو؟ سيُوقف الحظر المحادثة ويمنع التواصل بينكما.'))return;const {error}=await supabaseClient.rpc('block_wisal_conversation_member',{p_conversation_id:conversationId});if(error){alert('تعذر تنفيذ الحظر.');return;}if(activeChatChannel){await supabaseClient.removeChannel(activeChatChannel);activeChatChannel=null;}alert('تم الحظر وإيقاف التواصل.');document.getElementById('chatArea').innerHTML='تم إيقاف المحادثة بسبب الحظر.';};
+ document.getElementById('chatForm').onsubmit=async e=>{e.preventDefault();const input=document.getElementById('chatInput'),body=input.value.trim();if(!body)return;const send=e.submitter;send.disabled=true;const {data,error}=await supabaseClient.rpc('send_wisal_message',{p_conversation_id:conversationId,p_body:body});if(error){alert(error.message?.includes('Daily message limit')?'وصلتي للحد اليومي المجاني. تقدر ترجع غداً.':'تعذر إرسال الرسالة. قد يكون التواصل موقوفاً بسبب الحظر.');send.disabled=false;await refreshMessageQuota();return;}input.value='';send.disabled=false;await refreshChat(conversationId,user);await refreshMessageQuota();};
+}
+async function refreshChat(conversationId,user){const box=document.getElementById('chatMessages');await supabaseClient.rpc('mark_wisal_conversation_read',{p_conversation_id:conversationId});const {data,error}=await supabaseClient.from('member_messages').select('id,sender_id,body,created_at,read_at').eq('conversation_id',conversationId).order('created_at',{ascending:true}).limit(100);if(error){box.textContent='تعذر تحميل الرسائل.';return;}box.innerHTML=(data||[]).map(m=>`<div class="chat-message ${m.sender_id===user.id?'mine':'theirs'}">${escapeHtml(m.body)}<div class="small-muted">${new Date(m.created_at).toLocaleString('ar-MA')}${m.sender_id===user.id?` <span class="read-mark">${m.read_at?'✓✓ تمت القراءة':'✓ تم الإرسال'}</span>`:''}</div></div>`).join('')||'بداية محادثة محترمة إن شاء الله.';box.scrollTop=box.scrollHeight;}
+function profileChoice(value){const labels={slim:'نحيفة',average:'متوسطة',athletic:'رياضية',curvy:'ممتلئة',broad:'عريضة البنية',very_fair:'فاتحة جداً',fair:'فاتحة',medium:'متوسطة',olive:'زيتونية',brown:'سمراء',dark:'داكنة',prefer_not_say:'أفضل عدم التحديد'};return labels[value]||'غير محدد';}
+function profileColorLabel(value){const labels={black:'أسود',brown:'بني',green:'أخضر',blue:'أزرق',hazel:'عسلي',gray:'رمادي',blonde:'أشقر',red:'أحمر',other:'آخر'};return labels[value]||'غير محدد';}
+function calculateAge(dateString){const birth=new Date(dateString+'T00:00:00');const today=new Date();let age=today.getFullYear()-birth.getFullYear();if(today.getMonth()<birth.getMonth()||(today.getMonth()===birth.getMonth()&&today.getDate()<birth.getDate()))age--;return age;}
+function isAtLeast18(dateString){
+ const birth=new Date(dateString+'T00:00:00');const today=new Date();
+ let age=today.getFullYear()-birth.getFullYear();
+ const month=today.getMonth()-birth.getMonth();
+ if(month<0||(month===0&&today.getDate()<birth.getDate())) age--;
+ return age>=18;
+}
+function escapeHtml(value){return String(value).replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));}
+async function signOut(){
+ const {error}=await supabaseClient.auth.signOut();
+ if(error){alert('تعذر تسجيل الخروج حالياً. حاول مرة أخرى.');return;}
+ document.getElementById('profileStage').style.display='none';
+ document.getElementById('profileStage').innerHTML='';
+ document.querySelector('.dialog').classList.remove('member-dialog');
+ document.getElementById('authSwitchRow').style.display='block';
+ form.style.display='block';form.reset();updateAuthForm();
+ document.getElementById('modalTitle').textContent='تسجيل الدخول';
+ document.getElementById('modalDesc').textContent='أدخل البريد الإلكتروني وكلمة السر المرتبطين بحسابك.';
+}
+
+
+</script>
+</body></html>
