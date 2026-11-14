@@ -31,7 +31,7 @@ Date: 2026-11-14
 
 1. The live Netlify site currently serves the older landing page, and `privacy.html` and `delete-account.html` return HTTP 404. The GitHub source has these files, but the deployment has not been updated/verified from that source.
 2. A browser-driven live UI test could not be run because the available browser automation wallet has insufficient balance. No account was created or changed by that attempt.
-3. Supabase leaked-password protection remains disabled and must be enabled in Auth security settings.
+3. The Supabase security advisor reports leaked-password protection disabled. Current Supabase documentation states this feature is available on Pro plan and above. No paid upgrade has been made or recommended; if the project is on Free, this setting cannot be enabled without changing plans.
 4. Supabase security advisor still reports 16 authenticated-callable SECURITY DEFINER RPCs. Their definitions were reviewed for caller/ownership checks; two RLS/no-policy notices apply to service/RPC-only tables. These are documented for final security sign-off.
 5. Legal privacy wording is still provisional: operator identity, retention periods, jurisdiction-specific rights, and support/contact channel require final review.
 6. A full browser test with two real, separately controlled accounts and an end-to-end account-deletion test remain outstanding.
@@ -39,4 +39,4 @@ Date: 2026-11-14
 
 ## Release decision
 
-**Not ready for public launch yet.** Database-side core flows have passed simulated transactional tests, and the additional notification-table privilege issue has been fixed and verified. The live deployment, auth hardening, legal review, and real two-account browser test must still be completed first.
+**Not ready for public launch yet.** Database-side core flows have passed simulated transactional tests, and the additional notification-table privilege issue has been fixed and verified. The live deployment, available auth hardening, legal review, and real two-account browser test must still be completed first.
